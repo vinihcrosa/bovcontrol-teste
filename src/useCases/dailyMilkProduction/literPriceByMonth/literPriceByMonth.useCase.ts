@@ -34,6 +34,8 @@ export class LiterPriceByMonth {
     
     const totalCostByKm = distanceToFactory <= 50 ? distanceToFactory * costByKmUpTo50 : 50 * costByKmUpTo50 + (distanceToFactory - 50) * costByKmOver50;
     
+    const price = totalProduction <= 0 ? 0 : ((totalProduction * basePrice - totalCostByKm + bonusPerLiter * totalProduction) / totalProduction);
+
     this.logger.info(
       'LiterPriceByMonthUseCase',
       'total production',
@@ -43,12 +45,10 @@ export class LiterPriceByMonth {
         costByKmUpTo50,
         costByKmOver50,
         bonusPerLiter,
-        totalCostByKm
+        totalCostByKm,
+        price
       }
     )
-
-
-    const price = (totalProduction < 0 ? 0 : totalProduction * basePrice - totalCostByKm + bonusPerLiter * totalProduction) / totalProduction;
 
     return {
       dolar: Intl.NumberFormat('us', { style: 'currency', currency: 'USD' }).format(price / dolar),
