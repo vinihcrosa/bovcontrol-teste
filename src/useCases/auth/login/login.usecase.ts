@@ -35,9 +35,7 @@ export class LoginUseCase {
       this.logger.info(
         "loginUseCase",
         "Wrong password",
-        {
-          farmName
-        }
+        farmer
       )
       return null;
     }

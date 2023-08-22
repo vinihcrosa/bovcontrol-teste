@@ -13,6 +13,11 @@ export const farmerSchema = new Schema<IFarmer>({
     required: true,
   },
 
+  distanceToFactory: {
+    type: Number,
+    required: true,
+  },
+
   password: {
     type: String,
     required: true,

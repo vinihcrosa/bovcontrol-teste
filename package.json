@@ -6,7 +6,7 @@
   "author": "Vinicius Rosa <viniciushcrosa@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "tsx src/server.ts | pino-pretty"
+    "start": "tsx --watch src/server.ts | pino-pretty"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
@@ -17,6 +17,7 @@
     "mongoose": "^7.4.3",
     "morgan": "^1.10.0",
     "multer": "^1.4.5-lts.1",
+    "numeral": "^2.0.6",
     "pino": "^8.15.0"
   },
   "devDependencies": {
@@ -24,6 +25,7 @@
     "@types/express": "^4.17.17",
     "@types/jsonwebtoken": "^9.0.2",
     "@types/morgan": "^1.9.4",
+    "@types/numeral": "^2.0.2",
     "pino-pretty": "^10.2.0",
     "tsup": "^7.2.0",
     "tsx": "^3.12.7",

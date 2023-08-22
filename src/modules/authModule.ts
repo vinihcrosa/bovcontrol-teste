@@ -5,9 +5,11 @@ export interface IPayload {
   id: string;
   farmerName: string;
   farmName: string;
+  distanceToFactory: number;
 }
 
 async function sign (payload: IPayload) {
+  console.log(payload)
   return jwt.sign(payload, process.env.JWT_SECRET as string, {
     expiresIn: '1d',
   })
