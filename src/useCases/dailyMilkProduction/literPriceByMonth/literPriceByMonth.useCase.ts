@@ -48,11 +48,11 @@ export class LiterPriceByMonth {
     )
 
 
-    const price = totalProduction < 0 ? 0 : totalProduction * basePrice - totalCostByKm + bonusPerLiter * totalProduction;
+    const price = (totalProduction < 0 ? 0 : totalProduction * basePrice - totalCostByKm + bonusPerLiter * totalProduction) / totalProduction;
 
     return {
-      dolar: numeral(price / dolar).format('$0,0.00'),
-      real: numeral(price).format('R$0.0,00')
+      dolar: Intl.NumberFormat('us', { style: 'currency', currency: 'USD' }).format(price / dolar),
+      real: Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(price)
     }
   }
 }
