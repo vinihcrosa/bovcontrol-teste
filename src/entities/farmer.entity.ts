@@ -1,3 +1,5 @@
+import * as bcrypt from 'bcrypt';
+
 export interface IFarmer {
   id?: string;
   farmerName: string;
@@ -46,5 +48,9 @@ export class Farmer {
       ...this.props,
       ...props,
     };
+  }
+
+  checkPassword(password: string) {
+    return bcrypt.compareSync(password, this.password);
   }
 }

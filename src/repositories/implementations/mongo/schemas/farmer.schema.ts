@@ -4,6 +4,7 @@ import { IFarmer } from "../../../../entities/farmer.entity";
 export const farmerSchema = new Schema<IFarmer>({
   farmerName: {
     type: String,
+    unique: true,
     required: true,
   },
   farmName: {
