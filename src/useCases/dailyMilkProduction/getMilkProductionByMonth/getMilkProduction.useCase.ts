@@ -8,7 +8,7 @@ export class GetMilkProductionByMonthUseCase {
     private logger: ILogger  
   ) {}
 
-  public async execute(farmerId: string, date: Date): Promise<IDailyMilkProduction[]> {
+  public async execute(farmerId: string, date: Date) {
     this.logger.info(
       'GetMilkProductionByMonthUseCase',
       `farmerId: ${farmerId}, date: ${date}`,
@@ -19,6 +19,11 @@ export class GetMilkProductionByMonthUseCase {
     );
     const milkProduction = await this.milkProductionRepository.findByFarmerIdAndMonth(farmerId, date);
 
-    return milkProduction;
+    const mean = milkProduction.reduce((acc, curr) => acc + curr.quantity, 0) / milkProduction.length;
+
+    return {
+      production: milkProduction, 
+      mean
+    };
   }
 }
