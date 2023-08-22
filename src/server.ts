@@ -12,7 +12,7 @@ mongoose.connect(`mongodb://localhost:27017`, {
   user: mongoUser,
   pass: mongoPass,
   autoCreate: true,
-  
+  dbName: 'bovControl'  
 })
 
 app.listen(3333, () => console.log('Server is running!'));
