@@ -10,6 +10,11 @@ export const farmerSchema = new Schema<IFarmer>({
     type: String,
     required: true,
   },
+
+  password: {
+    type: String,
+    required: true,
+  }
 })
 
 export const FarmerModel = model<IFarmer>('Farmer', farmerSchema);
