@@ -5,6 +5,7 @@ export interface IFarmer {
   farmerName: string;
   farmName: string;
   password: string;
+  distanceToFactory: number;
 }
 
 export class Farmer {
@@ -30,11 +31,16 @@ export class Farmer {
     return this.props.password;
   }
 
+  get distanceToFactory() {
+    return this.props.distanceToFactory;
+  }
+
   toJson(): Omit<IFarmer, 'password'> {
     return {
       id: this.id,
       farmerName: this.farmerName,
       farmName: this.farmName,
+      distanceToFactory: this.props.distanceToFactory,
     };
   }
 

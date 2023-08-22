@@ -15,17 +15,6 @@ export const dailyMilkProductionSchema = new Schema<IDailyMilkProduction>({
     required: true,
     ref: 'Farmer',
   },
-  factory: {
-    type: String,
-  },
-  distance: {
-    type: Number,
-    required: true,
-  },
-  price: {
-    type: Number,
-    required: true,
-  }
 })
 
 export const DailyMilkProductionModel = mongoose.model<IDailyMilkProduction>('DailyMilkProduction', dailyMilkProductionSchema);

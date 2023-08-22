@@ -1,4 +1,4 @@
-import { IsString } from "class-validator";
+import { IsNumber, IsPositive, IsString } from "class-validator";
 
 export class CreateFarmerDTO {
   @IsString()
@@ -9,4 +9,8 @@ export class CreateFarmerDTO {
 
   @IsString()
   password: string;
+
+  @IsNumber()
+  @IsPositive()
+  distanceToFactory: number;
 }

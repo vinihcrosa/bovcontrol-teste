@@ -19,7 +19,13 @@ async findById(id: string): Promise<IDailyMilkProduction | undefined> {
 }
 
 async findByFarmerAndDate(farmerId: string, date: Date): Promise<IDailyMilkProduction | undefined> {
-  throw new Error("Method not implemented.");
+  const production = this.dailyMilkProductionModel.findOne({
+    farmerId,
+    date
+  })
+
+  if(!production) return undefined;
+  return production as unknown as IDailyMilkProduction;
 }
 
   findByFarmerId(farmerId: string): Promise<IDailyMilkProduction[]> {

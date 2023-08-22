@@ -3,9 +3,6 @@ export interface IDailyMilkProduction {
   quantity: number;
   date: Date;
   farmerId: string;
-  factory: string;
-  distance: number;
-  price: number;
 }
 
 export class DailyMilkProduction {
@@ -25,10 +22,6 @@ export class DailyMilkProduction {
 
   get farmerId() {
     return this.props.farmerId;
-  }
-
-  get factory() {
-    return this.props.factory;
   }
 
   toJson(): IDailyMilkProduction {
