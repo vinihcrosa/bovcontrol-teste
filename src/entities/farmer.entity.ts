@@ -2,6 +2,7 @@ export interface IFarmer {
   id?: string;
   farmerName: string;
   farmName: string;
+  password: string;
 }
 
 export class Farmer {
@@ -21,9 +22,13 @@ export class Farmer {
 
   get farmName() {  
     return this.props.farmName;
-  } 
+  }
 
-  toJson(): IFarmer {
+  get password() {
+    return this.props.password;
+  }
+
+  toJson(): Omit<IFarmer, 'password'> {
     return {
       id: this.id,
       farmerName: this.farmerName,

@@ -6,4 +6,7 @@ export class CreateFarmerDTO {
 
   @IsString()
   farmName: string;
+
+  @IsString()
+  password: string;
 }
