@@ -10,7 +10,7 @@ export class GetFarmerController {
   
   async handle(request: Request, response: Response) {
     try {
-      const { id } = request.params;
+      const { id } = request.body.payload;
       this.logger.info("getFarmerController", "Getting a farmer", id);
       const farmer = await this.getFarmerUseCase.execute(id);
       if (!farmer) {

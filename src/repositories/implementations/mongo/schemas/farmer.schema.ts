@@ -9,6 +9,7 @@ export const farmerSchema = new Schema<IFarmer>({
   },
   farmName: {
     type: String,
+    unique: true,
     required: true,
   },
 
