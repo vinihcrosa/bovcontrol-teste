@@ -3,11 +3,11 @@ import { ILogger } from "../../../logger/ILogger";
 import { IPayload } from "../../../modules/authModule";
 import { IDailyMilkProductionRepository } from "../../../repositories/IDayliMilkProductionRepository";
 import { DailyMilkProductionRepository } from "../../../repositories/implementations/mongo/dailyMilkProduction.respository";
-import { LiterPriceByMonth } from "../literPriceByMonth/literPriceByMonth.useCase";
+import { ILiterPriceByMonth, LiterPriceByMonth } from "../literPriceByMonth/literPriceByMonth.useCase";
 
 export class AnnualLiterPriceByMonthUseCase {
   constructor(
-    private literPriceByMonth: LiterPriceByMonth,
+    private literPriceByMonth: ILiterPriceByMonth,
     private logger: ILogger
   ) {}
 
