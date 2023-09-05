@@ -11,7 +11,7 @@ interface LocalTestContext {
   farmerRepository: IFarmerRepository;
 }
 
-describe('CreateFarmer', () => {
+describe('Create farmer use case', () => {
   beforeEach<LocalTestContext>(async (context) => {
     const logger: ILogger = new MockLogger();
 
