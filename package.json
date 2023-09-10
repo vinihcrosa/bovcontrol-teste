@@ -6,7 +6,8 @@
   "author": "Vinicius Rosa <viniciushcrosa@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "tsx --watch src/server.ts | pino-pretty"
+    "start": "tsx --watch src/server.ts | pino-pretty",
+    "test": "vitest"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
@@ -29,6 +30,7 @@
     "pino-pretty": "^10.2.0",
     "tsup": "^7.2.0",
     "tsx": "^3.12.7",
-    "typescript": "^5.1.6"
+    "typescript": "^5.1.6",
+    "vitest": "^0.34.3"
   }
 }

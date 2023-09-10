@@ -4,7 +4,11 @@ import { ILogger } from "../../../logger/ILogger";
 import { IPayload } from "../../../modules/authModule";
 import { IDailyMilkProductionRepository } from "../../../repositories/IDayliMilkProductionRepository";
 
-export class LiterPriceByMonth {
+export interface ILiterPriceByMonth {
+  execute(payload: IPayload, date: Date): Promise<{dolar: string, real: string}>;
+}
+
+export class LiterPriceByMonth implements ILiterPriceByMonth{
   constructor(
     private dailyMilkProductionRepository: IDailyMilkProductionRepository,
     private logger: ILogger
